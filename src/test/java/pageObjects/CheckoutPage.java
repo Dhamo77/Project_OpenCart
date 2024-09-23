@@ -1,8 +1,10 @@
 package pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -28,6 +30,8 @@ public class CheckoutPage extends BasePage {
     WebElement cityBoxElement;
     @FindBy(xpath = "//*[@name='postcode']")
     WebElement postCodeBoxElement;
+    @FindBy(xpath = "//select[@name='country_id']")
+    WebElement countryDropDown;
     @FindBy(xpath = "//select[@name='zone_id']")
     WebElement regionStateDropDown;
     @FindBy(css = "button#button-shipping-address")
@@ -44,6 +48,8 @@ public class CheckoutPage extends BasePage {
     WebElement regionStateErrorMessage;
     @FindBy(id = "error-shipping-country")
     WebElement countryErrorMessage;
+    @FindBy(id = "error-shipping-postcode")
+    WebElement postCodeErrorMessage;
 
     /**Shipping Method Elements*/
 
@@ -81,4 +87,100 @@ public class CheckoutPage extends BasePage {
     WebElement orderedProductsVATAmount;
     @FindBy(xpath = "(//*[@id='checkout-confirm']//tfoot/tr/td[2])[4]")
     WebElement orderedProductsTotalAmount;
+
+    /**
+     * Action methods
+     */
+
+    public void setFirstname(String firstname){
+        firstnameBoxElement.sendKeys(firstname);
+    }
+    public String  getFirstNameErrorMessage(){
+        return firstnameErrorMessage.getText();
+    }
+    public void setLastname(String lastname){
+        lastnameBoxElement.sendKeys(lastname);
+    }
+    public String  getLastNameErrorMessage(){
+        return lastnameErrorMessage.getText();
+    }
+    public void setAddressBox1Element(String address){
+        addressBox1Element.sendKeys(address);
+    }
+    public String  getAddress1ErrorMessage(){
+        return address1ErrorMessage.getText();
+    }
+    public void setAddressBox2Element(String address){
+        addressBox2Element.sendKeys(address);
+    }
+    public void setCityName(String cityName){
+        cityBoxElement.sendKeys(cityName);
+    }
+    public String  getCityErrorMessage(){
+        return cityErrorMessage.getText();
+    }
+    public void setCountryName(String countryName){
+        new Select(countryDropDown).selectByValue(countryName);
+    }
+    public String  getCountryErrorMessage(){
+        return countryErrorMessage.getText();
+    }
+    public void setRegion_StateName(String regionStateName){
+        new Select(regionStateDropDown).selectByValue(regionStateName);
+    }
+    public String  getRegion_StateErrorMessage(){
+        return regionStateErrorMessage.getText();
+    }
+    public void setPostCode(String postCode){
+        postCodeBoxElement.sendKeys(postCode);
+    }
+    public String  getPostCodeErrorMessage(){
+        return postCodeErrorMessage.getText();
+    }
+    public void setCompanyName(String companyName){
+        companyBoxElement.sendKeys(companyName);
+    }
+    public void setShippingMethod(){
+        chooseShippingMethod.click();
+        flatShippingRateButtonElement.click();
+        confirmTheShippingMethodElement.click();
+    }
+    public String getShippingErrorMessage(){
+        return shippingMethodErrorMessage.getText();
+    }
+    public void setPaymentMethod(){
+        choosePaymentMethod.click();
+        cashOnDeliveryButtonElement.click();
+        confirmThePaymentMethodElement.click();
+    }
+    public String getPaymentErrorMessage(){
+        return paymentMethodErrorMessage.getText();
+    }
+    public String getEmptyShoppingCardMessage(){
+        return emptyShoppingCardMessageElement.getText();
+    }
+    public void addCommentsOnOrderedProducts(String comments){
+        inputTextAreaElement.sendKeys(comments+ Keys.ENTER);
+    }
+    public void clickTheContinueButtonForNextProcess(){
+        continueButton.click();
+    }
+    public void confirmOrder(){
+        confirmOrderButtonElement.click();
+    }
+    public int totalNumberOfProducts(){
+        return orderedProductsName.size();
+    }
+    public String getSub_TotalAmount(){
+        return orderedProductsSub_TotalAmount.getText();
+    }
+    public String getECO_TaxAmount(){
+        return orderedProductsEco_TaxAmount.getText();
+    }
+    public String getVATAmount(){
+        return orderedProductsVATAmount.getText();
+    }
+    public String getTotalAmount(){
+        return orderedProductsSub_TotalAmount.getText();
+    }
 }
