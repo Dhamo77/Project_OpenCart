@@ -1,47 +1,117 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends BasePage {
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+
+import static java.awt.Toolkit.getDefaultToolkit;
+
+public class LoginPage extends AllRightColumnOptions {
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(css = "#input-email")
-    WebElement emailBox;
+    private WebElement emailBox;
     @FindBy(css = "#input-password")
-    WebElement passwordBox;
-    @FindBy(xpath = "(//*[@class='btn btn-primary'])[2]")
-    WebElement loginButton;
+    private WebElement passwordBox;
+    @FindBy(xpath = "//*[@id='form-login']//*[@class='btn btn-primary']")
+    private WebElement loginButton;
     @FindBy(xpath = "(//*[@href='https://demo.opencart.com/en-gb?route=account/forgotten'])[1]")
-    WebElement forgottenPasswordLink;
+    private WebElement forgottenPasswordLink;
     @FindBy(xpath = "//*[@class='alert alert-danger alert-dismissible']")
-    WebElement warningMessage;
+    private WebElement warningMessage;
     @FindBy(xpath = "(//*[@class='btn btn-primary'])[1]")
-    WebElement newCustomerLink;
+    private WebElement newCustomerLink;
+
+    @FindBy(xpath = "//*[@for='input-email']")
+    private WebElement mandatoryEmailSymbol;
+    @FindBy(xpath = "//*[@for='input-password']")
+    private WebElement mandatoryPasswordSymbol;
 
     /**
      Action methods
      **/
-    public void enterEmailId(String email){
+    public void setEmailId(String email){
         emailBox.sendKeys(email);
     }
-    public void enterPassword(String password){
+    public void setPassword(String password){
         passwordBox.sendKeys(password);
     }
+
+    /**
+     * TODO
+     */
     public void clickLoginButton(){
-        loginButton.click();
+        js.executeScript("arguments[0].click();", loginButton);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='My Account']")));
+
     }
-    public void forgottenPasswordLink(){
+    public void clickForgottenPasswordLink(){
         forgottenPasswordLink.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Forgot Your Password?']")));
     }
     public String getWarningMessage(){
+        wait.until(ExpectedConditions.visibilityOf(warningMessage));
         return warningMessage.getText();
     }
     public void navigateToRegistrationPage(){
         newCustomerLink.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Register Account']")));
     }
+
+    public void setLoginDetails(String email,String password){
+        setEmailId(email);
+        setPassword(password);
+        clickLoginButton();
+    }
+    public String  getEmailPlaceholder(){
+        return emailBox.getAttribute("placeholder");
+    }
+    public String  getPasswordPlaceholder(){
+        return passwordBox.getAttribute("placeholder");
+    }
+
+    public String  getPasswordType(){
+        return passwordBox.getAttribute("type");
+    }
+
+    public void byKeyBoardActions(String email,String password)  {
+        actions.sendKeys(emailBox,email).sendKeys(Keys.TAB).perform();
+        actions.sendKeys(passwordBox,password).sendKeys(Keys.ENTER).perform();
+
+    }
+
+    public boolean isEmailHaveMandatorySymbol(){
+        return is_MandatoryFields(mandatoryEmailSymbol);
+    }
+    public boolean isPasswordHaveMandatorySymbol(){
+        return is_MandatoryFields(mandatoryPasswordSymbol);
+    }
+    public String getCopiedPassword(){
+        actions.moveToElement(passwordBox).click().doubleClick().keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
+        return getClipboardContents();
+    }
+    private static String getClipboardContents() {
+        String result = "";
+        try {
+            Clipboard clipboard = getDefaultToolkit().getSystemClipboard();
+            Transferable contents = clipboard.getContents(null);
+            if (contents != null && contents.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+                result = (String) contents.getTransferData(DataFlavor.stringFlavor);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 }

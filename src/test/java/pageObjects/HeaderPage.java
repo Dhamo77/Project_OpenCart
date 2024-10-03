@@ -4,10 +4,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class HeaderPage extends BasePage{
+public class HeaderPage extends HomePageEnums{
+
     public HeaderPage(WebDriver driver) {
         super(driver);
     }
@@ -25,7 +27,7 @@ public class HeaderPage extends BasePage{
     List<WebElement> currencyDropDown;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[3]")
     WebElement  myAccountElement;
-    @FindBy(xpath = "//*[@class='dropdown-menu dropdown-menu-right']/li")
+    @FindBy(xpath = "//*[contains(@class,'dropdown-menu dropdown-menu-right')]/li")
     List<WebElement> myAccountDropDown;
     @FindBy(xpath = "//*[@placeholder='Search']")
     WebElement searchBoxElement;
@@ -91,10 +93,14 @@ public class HeaderPage extends BasePage{
     /**
      Actions Methods
      **/
-    public void changeCurrencyValue(String currencyType){
+    public void changeCurrencyValue(Currency currencyType){
+        wait.until(ExpectedConditions.visibilityOf(currencyElement));
+        wait.until(ExpectedConditions.elementToBeClickable(currencyElement));
         currencyElement.click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(currencyDropDown));
         for (WebElement option:currencyDropDown){
-            if (currencyType.equals(option.getText())){
+            if (currencyType.getVisibleText().equals(option.getText())){
+                wait.until(ExpectedConditions.elementToBeClickable(option));
                 option.click();
                 break;
             }
@@ -103,10 +109,14 @@ public class HeaderPage extends BasePage{
     public String getContactNumber(){
         return contactNumberElement.getText();
     }
-    public void setMyAccount(String userType){
+    public void setMyAccount(MyAccount type){
+        wait.until(ExpectedConditions.visibilityOf(myAccountElement));
+        wait.until(ExpectedConditions.elementToBeClickable(myAccountElement));
         myAccountElement.click();
+        wait.until(ExpectedConditions.visibilityOfAllElements(myAccountDropDown));
         for (WebElement option:myAccountDropDown){
-            if (userType.equals(option.getText())){
+            if (type.getVisibleText().equals(option.getText())){
+                wait.until(ExpectedConditions.elementToBeClickable(option));
                 option.click();
                 break;
             }
@@ -124,28 +134,28 @@ public class HeaderPage extends BasePage{
     public void searchProduct(String productName){
         searchBoxElement.sendKeys(productName+ Keys.ENTER);
     }
-    public void getParticularDesktop(String desktopType){
+    public void getParticularDesktop(Components type){
         desktopElement.click();
         for (WebElement option:desktopElementDropDown){
-            if (desktopType.equals(option.getText())){
+            if (type.getVisibleText().startsWith(option.getText())){
                 option.click();
                 break;
             }
         }
     }
-    public void getParticularLaptop_NoteBook(String lap_notebookType){
+    public void getParticularLaptop_NoteBook(Components lap_notebookType){
         laptop_notebookElement.click();
         for (WebElement option:laptop_notebookDropDown){
-            if (lap_notebookType.equals(option.getText())){
+            if (lap_notebookType.getVisibleText().startsWith(option.getText())){
                 option.click();
                 break;
             }
         }
     }
-    public void getParticularComponents(String componentsType){
+    public void getParticularComponents(Components type){
         componentsElement.click();
         for (WebElement option:componentsDropDown){
-            if (componentsType.equals(option.getText())){
+            if (type.getVisibleText().startsWith(option.getText())){
                 option.click();
                 break;
             }

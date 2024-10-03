@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class CheckoutPage extends BasePage {
+public class CheckoutPage extends AllRightColumnOptions {
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
@@ -178,9 +178,11 @@ public class CheckoutPage extends BasePage {
         return orderedProductsEco_TaxAmount.getText();
     }
     public String getVATAmount(){
+
         return orderedProductsVATAmount.getText();
     }
     public String getTotalAmount(){
-        return orderedProductsSub_TotalAmount.getText();
+        return orderedProductsTotalAmount.getText();
     }
+
 }
