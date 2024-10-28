@@ -1,0 +1,11 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TS005_SET1.java">
+        <classes>
+            <class name="testCases.TS_005.TS005_SET1">
+                <methods>
+                    <include name="summa"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

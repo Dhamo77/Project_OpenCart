@@ -1,0 +1,35 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TS_002">
+        <classes>
+            <class name="testCases.TS_002.TS_002_Set1">
+                <methods>
+                    <include name="TS_LI_001"/>
+                </methods>
+            </class>
+            <class name="testCases.TS_002.TS_002_Set2">
+                <methods>
+                    <include name="TS_LI_002"/>
+                </methods>
+            </class>
+            <class name="testCases.TS_002.TS_002_Set3">
+                <methods>
+                    <include name="TS_LI_003"/>
+                    <include name="TS_LI_004"/>
+                    <include name="TS_LI_005"/>
+                    <include name="TS_LI_006"/>
+                    <include name="TS_LI_007"/>
+                    <include name="TS_LI_008"/>
+                    <include name="TS_LI_009"/>
+                    <include name="TS_LI_014"/>
+                </methods>
+            </class>
+            <class name="testCases.TS_002.TS_002_Set4">
+                <methods>
+                    <include name="TS_LI_011"/>
+                    <include name="TS_LI_012"/>
+                    <include name="TS_LI_013"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

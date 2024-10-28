@@ -61,7 +61,7 @@ public class LogoutPage extends AllRightColumnOptions{
                 }
             }
             if (!found) {
-                throw new NoSuchElementException("Logout option is not available in the dropdown.");
+                throw new NoSuchElementException("option is not available in the dropdown.");
             }
         } catch (NoSuchElementException e) {
             throw e;

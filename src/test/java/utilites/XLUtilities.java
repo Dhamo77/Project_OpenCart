@@ -8,7 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -175,28 +174,29 @@ public class XLUtilities {
     public Object[] getRowValues(int rowNumber,String sheetName) {
         Object[] output=null;
         try {
-        workbook=new XSSFWorkbook(fileInputStream);
-        sheet= workbook.getSheet(sheetName);
-        row= sheet.getRow(rowNumber);
-        output=new Object[row.getLastCellNum()];
-        for (int i=0;i<row.getLastCellNum();i++){
-            cell = row.getCell(i);
-            if (cell != null) {
-                try {
-                    switch (cell.getCellType()) {
-                        case STRING -> output[i] = cell.getStringCellValue();
-                        case NUMERIC -> output[i] = cell.getNumericCellValue();
-                        case BOOLEAN -> output[i] = cell.getBooleanCellValue();
-                        case FORMULA -> output[i] = cell.getCellFormula();
-                        default -> output[i] = "";
+            fileInputStream = new FileInputStream(path);
+            workbook=new XSSFWorkbook(fileInputStream);
+            sheet= workbook.getSheet(sheetName);
+            row= sheet.getRow(rowNumber);
+            output=new Object[row.getLastCellNum()];
+            for (int i=0;i<row.getLastCellNum();i++){
+                cell = row.getCell(i);
+                if (cell != null) {
+                    try {
+                        switch (cell.getCellType()) {
+                            case STRING -> output[i] = cell.getStringCellValue();
+                            case NUMERIC -> output[i] = cell.getNumericCellValue();
+                            case BOOLEAN -> output[i] = cell.getBooleanCellValue();
+                            case FORMULA -> output[i] = cell.getCellFormula();
+                            default -> output[i] = "";
+                        }
+                    } catch (IllegalArgumentException e) {
+                        output[i] = "";
                     }
-                } catch (IllegalArgumentException e) {
+                } else {
                     output[i] = "";
                 }
-            } else {
-                output[i] = "";
-            }
-        }}
+            }}
         catch (Exception e){
             e.getMessage();
         }

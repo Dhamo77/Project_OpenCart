@@ -17,10 +17,14 @@ public class TS_003_SET1 extends BaseClass {
 
     @Test
     public  void TC_LO_001(){
+        logger.info("***********Starting TC_LO_001 Test Case***********");
+        logger.info("Navigate to login page ");
         new HeaderPage(driver).setMyAccount(HomePageEnums.MyAccount.LOGIN);
         LoginPage loginPage=new LoginPage(driver);
+        logger.info("Set login details");
         loginPage.setLoginDetails(properties.getProperty("email"), properties.getProperty("password"));
         LogoutPage logoutPage=new LogoutPage(driver);
+        logger.info("after login logout from the device ");
         logoutPage.setMyAccount(LogoutPage.MyAccount.LOGOUT);
         logoutPage.navigateToHomePage();
 
@@ -34,10 +38,14 @@ public class TS_003_SET1 extends BaseClass {
 
     @Test
     public  void TC_LO_002(){
+        logger.info("***********Starting TC_LO_002 Test Case***********");
+        logger.info("Navigate to login page ");
         new HeaderPage(driver).setMyAccount(HomePageEnums.MyAccount.LOGIN);
         LoginPage loginPage=new LoginPage(driver);
+        logger.info("set login details");
         loginPage.setLoginDetails(properties.getProperty("email"), properties.getProperty("password"));
         LogoutPage logoutPage=new LogoutPage(driver);
+        logger.info("navigate to logout page");
         loginPage.navigateToLogoutPage();
 
         String expected="Account Logout";

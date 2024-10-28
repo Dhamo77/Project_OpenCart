@@ -1,0 +1,41 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TS_004">
+        <classes>
+            <class name="testCases.TS_004.TS_004_SET1">
+                <methods>
+                    <include name="TC_SP_001"/>
+                    <include name="TC_SP_002"/>
+                    <include name="TC_SP_003"/>
+                    <include name="TC_SP_004"/>
+                    <include name="TC_SP_005"/>
+                    <include name="TC_SP_006"/>
+                    <include name="TC_SP_007"/>
+                    <include name="TC_SP_008"/>
+                    <include name="TC_SP_009"/>
+                    <include name="TC_SP_010"/>
+                    <include name="TC_SP_011"/>
+                    <include name="TC_SP_012_1"/>
+                    <include name="TC_SP_012_2"/>
+                    <include name="TC_SP_013"/>
+                    <include name="TC_SP_014"/>
+                    <include name="TC_SP_015"/>
+                    <include name="TC_SP_016"/>
+                    <include name="TC_SP_018"/>
+                    <include name="TC_SP_019"/>
+                    <include name="TC_SP_021"/>
+                    <include name="TC_SP_022"/>
+                    <include name="TC_SP_023"/>
+                    <include name="TC_SP_024"/>
+                </methods>
+            </class>
+            <class name="testCases.TS_004.TS_004_SET2">
+                <methods>
+                    <include name="TC_SP_020_1"/>
+                    <include name="TC_SP_020_2"/>
+                    <include name="TC_SP_020_3"/>
+                    <include name="TC_SP_020_4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

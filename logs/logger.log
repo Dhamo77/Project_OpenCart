@@ -1,0 +1,67 @@
+2024-10-11 18:42:12 INFO  testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:42:18 INFO  testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:42:18 INFO  testCases.TS_005.TS005_SET1:11 - For checking purpose
+2024-10-11 18:42:18 INFO  testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:42:18 INFO  testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:42:18 INFO  testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:44:17 INFO  testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:44:23 INFO  testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:44:23 INFO  testCases.TS_005.TS005_SET1:11 - For checking purpose
+2024-10-11 18:44:23 INFO  testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:44:23 INFO  testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:44:23 INFO  testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:45:02 INFO  testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:45:07 INFO  testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:45:07 ERROR testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:45:07 FATAL testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:45:07 WARN  testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:46:18 INFO  TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:46:24 INFO  TS005_SET1:10 - For checking purpose
+2024-10-11 18:46:24 ERROR TS005_SET1:12 - For checking purpose
+2024-10-11 18:46:24 FATAL TS005_SET1:13 - For checking purpose
+2024-10-11 18:46:24 WARN  TS005_SET1:14 - For checking purpose
+2024-10-11 18:47:44 [main] BaseClasses.BaseClass.setUp(BaseClass.java:43)evel BaseClasses.BaseClass.setUp(BaseClass.java:43)ogger{36} - SetUp Basic things.....sg
+2024-10-11 18:47:50 [main] testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:10)evel testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:10)ogger{36} - For checking purposesg
+2024-10-11 18:47:50 [main] testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:12)evel testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:12)ogger{36} - For checking purposesg
+2024-10-11 18:47:50 [main] testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:13)evel testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:13)ogger{36} - For checking purposesg
+2024-10-11 18:47:50 [main] testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:14)evel testCases.TS_005.TS005_SET1.summa(TS005_SET1.java:14)ogger{36} - For checking purposesg
+2024-10-11 18:48:32 INFO  TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:48:36 INFO  TS005_SET1:10 - For checking purpose
+2024-10-11 18:48:36 ERROR TS005_SET1:12 - For checking purpose
+2024-10-11 18:48:36 FATAL TS005_SET1:13 - For checking purpose
+2024-10-11 18:48:36 WARN  TS005_SET1:14 - For checking purpose
+2024-10-11 18:49:22 INFO  TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:49:27 INFO  TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:49:27 ERROR TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:49:27 FATAL TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:49:27 WARN  TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:50:05 INFO  testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:50:10 INFO  testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:50:10 ERROR testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:50:10 FATAL testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:50:10 WARN  testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:50:24 INFO  testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:50:29 INFO  testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:50:29 ERROR testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:50:29 FATAL testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:50:29 WARN  testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:53:54 INFO    testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:54:00 INFO    testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:54:00 ERROR   testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:54:00 FATAL   testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:54:00 WARN    testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:56:06 [INFO ] testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+2024-10-11 18:56:11 [INFO ] testCases.TS_005.TS005_SET1:10 - For checking purpose
+2024-10-11 18:56:11 [ERROR] testCases.TS_005.TS005_SET1:12 - For checking purpose
+2024-10-11 18:56:11 [FATAL] testCases.TS_005.TS005_SET1:13 - For checking purpose
+2024-10-11 18:56:11 [WARN ] testCases.TS_005.TS005_SET1:14 - For checking purpose
+2024-10-11 18:56:59 [INFO ] testCases.TS_005.TS005_SET1:43 - SetUp Basic things.....
+ %ex2024-10-11 18:57:03 [INFO ] testCases.TS_005.TS005_SET1:10 - For checking purpose
+ %ex2024-10-11 18:57:03 [ERROR] testCases.TS_005.TS005_SET1:12 - For checking purpose
+ %ex2024-10-11 18:57:03 [FATAL] testCases.TS_005.TS005_SET1:13 - For checking purpose
+ %ex2024-10-11 18:57:03 [WARN ] testCases.TS_005.TS005_SET1:14 - For checking purpose
+ %ex2024-10-11 19:00:42 INFO  testCases.TS_005.TS005_SET1:43 -" SetUp Basic things....."
+2024-10-11 19:00:47 INFO  testCases.TS_005.TS005_SET1:10 -" For checking purpose"
+2024-10-11 19:00:47 ERROR testCases.TS_005.TS005_SET1:12 -" For checking purpose"
+2024-10-11 19:00:47 FATAL testCases.TS_005.TS005_SET1:13 -" For checking purpose"
+2024-10-11 19:00:47 WARN  testCases.TS_005.TS005_SET1:14 -" For checking purpose"

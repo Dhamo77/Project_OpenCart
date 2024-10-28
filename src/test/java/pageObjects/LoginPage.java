@@ -52,9 +52,8 @@ public class LoginPage extends AllRightColumnOptions {
      */
     public void clickLoginButton(){
         js.executeScript("arguments[0].click();", loginButton);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='My Account']")));
-
     }
+
     public void clickForgottenPasswordLink(){
         forgottenPasswordLink.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Forgot Your Password?']")));
@@ -73,6 +72,12 @@ public class LoginPage extends AllRightColumnOptions {
         setPassword(password);
         clickLoginButton();
     }
+    public void validLoginDetails(String email,String password){
+        setEmailId(email);
+        setPassword(password);
+        clickLoginButton();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='My Account']")));
+    }
     public String  getEmailPlaceholder(){
         return emailBox.getAttribute("placeholder");
     }
@@ -87,7 +92,7 @@ public class LoginPage extends AllRightColumnOptions {
     public void byKeyBoardActions(String email,String password)  {
         actions.sendKeys(emailBox,email).sendKeys(Keys.TAB).perform();
         actions.sendKeys(passwordBox,password).sendKeys(Keys.ENTER).perform();
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='My Account']")));
     }
 
     public boolean isEmailHaveMandatorySymbol(){

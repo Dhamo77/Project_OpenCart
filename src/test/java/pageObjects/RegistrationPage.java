@@ -125,11 +125,12 @@ public class RegistrationPage extends AllRightColumnOptions {
         return email_box.getAttribute("validationMessage");
     }
     public void registerAccountByKeyBoardAction(String firstName, String lastName, String email, String password) {
-        privacy_Policy_button.click();
+        enablePrivacyPolicy();
         actions.sendKeys(first_name_box, firstName).sendKeys(Keys.TAB).perform();
         actions.sendKeys(last_name_box, lastName).sendKeys(Keys.TAB).perform();
         actions.sendKeys(email_box, email).sendKeys(Keys.TAB).perform();
-        actions.sendKeys(password_box, password).sendKeys(Keys.ENTER).perform();;
+        actions.sendKeys(password_box, password).sendKeys(Keys.ENTER).perform();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Your Account Has Been Created!']")));
     }
 
     public String getFirstNamePlaceholder() {
@@ -178,6 +179,20 @@ public class RegistrationPage extends AllRightColumnOptions {
             enableNewsletter();
         }
         clickSubmitButton();
+    }
+    public void validAccountRegister(String email,String  firstName,String lastName,String password,PrivacyPolicyOption privacyButton,NewsletterOption newsLetterButton){
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setPassWord(password);
+        if (privacyButton == PrivacyPolicyOption.ENABLED) {
+            enablePrivacyPolicy();
+        }
+        if (newsLetterButton == NewsletterOption.SUBSCRIBED) {
+            enableNewsletter();
+        }
+        clickSubmitButton();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Your Account Has Been Created!']")));
     }
     public  String getAttributeValue(String attribute){
         return first_name_box.getAttribute(attribute);

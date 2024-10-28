@@ -12,6 +12,6 @@ public class NewsLetterPage extends AllRightColumnOptions{
     private WebElement subscriptionButton;
 
     public boolean subscriptionButton_isEnable(){
-        return subscriptionButton.isEnabled();
+        return subscriptionButton.isSelected();
     }
 }

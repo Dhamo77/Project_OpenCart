@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utilites.ExtentReport"/>
+        <listener class-name="utilites.RunFailedTestCase"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="testCases">
+        <classes>
+            <class name="testCases.TS_002.TS_002_Set1"/>
+            <class name="testCases.TS_001.TS001Set3"/>
+        </classes>
+    </test>
+</suite>

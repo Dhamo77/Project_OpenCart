@@ -16,10 +16,10 @@ public class RunFailedTestCase implements IAnnotationTransformer {
 
 }
 class RetryListener implements IRetryAnalyzer {
+    int failCount = 0;
+    int limit = 4;
     @Override
     public boolean retry(ITestResult iTestResult) {
-        int failCount = 0;
-        int limit = 4;
         if (failCount < limit) {
             failCount++;
             return true;

@@ -1,0 +1,17 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="TS_003">
+        <classes>
+            <class name="testCases.TS_003.TS_003_SET1">
+                <methods>
+                    <include name="TC_LO_001"/>
+                    <include name="TC_LO_002"/>
+                    <include name="TC_LO_003"/>
+                    <include name="TC_LO_004"/>
+                    <include name="TC_LO_005"/>
+                    <include name="TC_LO_006"/>
+                    <include name="TC_LO_007"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

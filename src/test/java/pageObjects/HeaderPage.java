@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,81 +15,87 @@ public class HeaderPage extends HomePageEnums{
         super(driver);
     }
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[2]")
-    WebElement contactNumberElement;
+    private WebElement contactNumberElement;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[4]")
-    WebElement  wishListElement;
+    private WebElement  wishListElement;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[5]")
-    WebElement  shoppingCartElement;
+    private WebElement  shoppingCartElement;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[6]")
-    WebElement  checkoutElement;
+    private WebElement  checkoutElement;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[1]")
-    WebElement currencyElement;
+    private WebElement currencyElement;
     @FindBy(xpath = "(//div[@class='dropdown'])[1]//ul/li")
-    List<WebElement> currencyDropDown;
+    private List<WebElement> currencyDropDown;
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[3]")
-    WebElement  myAccountElement;
+    private WebElement  myAccountElement;
     @FindBy(xpath = "//*[contains(@class,'dropdown-menu dropdown-menu-right')]/li")
-    List<WebElement> myAccountDropDown;
+    private List<WebElement> myAccountDropDown;
     @FindBy(xpath = "//*[@placeholder='Search']")
-    WebElement searchBoxElement;
+    private WebElement searchBoxElement;
+    @FindBy(xpath = "//*[@class=\"btn btn-light btn-lg\"]")
+    private WebElement searchButtonElement;
+
+
     @FindBy(xpath = "//div[@class=dropdown d-grid']/button")
-    WebElement addedItemsElement;
+    private WebElement addedItemsElement;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//ul/li/table//tr")
-    List<WebElement> addedItemsDropDown;
+    private List<WebElement> addedItemsDropDown;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//button[@aria-label='Remove']")
-    WebElement addedItemsRemove;
+    private WebElement addedItemsRemove;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//a[contains(@href,'checkout/cart')]")
-    WebElement addedItemsViewCard;
+    private WebElement addedItemsViewCard;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//a[contains(@href,'checkout/checkout')]")
-    WebElement addedItemsCheckOut;
+    private WebElement addedItemsCheckOut;
     @FindBy(xpath = "(//div[@class='dropdown d-grid']//li//div//tbody/tr/td)[2]")
-    WebElement addedItemSub_TotalAmount;
+    private WebElement addedItemSub_TotalAmount;
     @FindBy(xpath = "(//div[@class='dropdown d-grid']//li//div//tbody/tr/td)[4]")
-    WebElement addedItemEco_TaxAmount;
+    private WebElement addedItemEco_TaxAmount;
     @FindBy(xpath = "(//div[@class='dropdown d-grid']//li//div//tbody/tr/td)[6]")
-    WebElement addedItemVATAmount;
+    private WebElement addedItemVATAmount;
     @FindBy(xpath = "(//div[@class='dropdown d-grid']//li//div//tbody/tr/td)[8]")
-    WebElement addedItemTotalAmount;
+    private WebElement addedItemTotalAmount;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//ul//table[@class=table table-striped mb-2']//tr//td[@class='text-start']/a")
-    WebElement addedItemsProductDetails;
+    private WebElement addedItemsProductDetails;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//ul//table[@class='table table-striped mb-2']//tr//td[3]")
-    WebElement countOfParticularAddedProduct;
+    private WebElement countOfParticularAddedProduct;
     @FindBy(xpath = "//div[@class='dropdown d-grid']//ul//table[@class='table table-striped mb-2']//tr//td[4]")
-    WebElement amountOfParticularAddedProduct;
+    private WebElement amountOfParticularAddedProduct;
 
     //mainTag
     @FindBy(xpath = "//*[@class='nav-item dropdown']/a[contains(@href,'desktop')]")
-    WebElement desktopElement;
+    private WebElement desktopElement;
     @FindBy(xpath = "(//*[@class='nav-item dropdown'])[1]//li")
-    List<WebElement> desktopElementDropDown;
+    private List<WebElement> desktopElementDropDown;
     @FindBy(xpath = "//a[@class='see-all'][contains(@href,'desktops')]")
-    WebElement show_all_Desktops;
+    private WebElement show_all_Desktops;
     @FindBy(xpath = "//*[@class='nav-item dropdown']/a[contains(@href,'laptop')]")
-    WebElement laptop_notebookElement;
+    private WebElement laptop_notebookElement;
     @FindBy(xpath = "(//*[@class='nav-item dropdown'])[2]//li")
-    List<WebElement> laptop_notebookDropDown;
+    private List<WebElement> laptop_notebookDropDown;
     @FindBy(xpath = "//a[@class='see-all'][contains(@href,'laptop')]")
-    WebElement show_all_laptop_notebook;
+    private WebElement show_all_laptop_notebook;
     @FindBy(xpath = "//*[@class='nav-item dropdown']/a[contains(@href,'component')]")
-    WebElement componentsElement;
+    private WebElement componentsElement;
     @FindBy(xpath = "(//*[@class='nav-item dropdown'])[3]//li")
-    List<WebElement> componentsDropDown;
+    private List<WebElement> componentsDropDown;
     @FindBy(xpath = "//a[@class='see-all'][contains(@href,'component')]")
-    WebElement show_all_components;
+    private WebElement show_all_components;
     @FindBy(xpath = "//*[@class='nav-item']/a[contains(@href,'tablet')]")
-    WebElement tabletElement;
+    private WebElement tabletElement;
     @FindBy(xpath = "//*[@class='nav-item']/a[contains(@href,'software')]")
-    WebElement softwareElement;
+    private WebElement softwareElement;
     @FindBy(xpath = "//*[@class='nav-item']/a[contains(@href,'phone')]")
-    WebElement phones_PDAsElement;
+    private WebElement phones_PDAsElement;
     @FindBy(xpath = "//*[@class='nav-item']/a[contains(@href,'cameras')]")
-    WebElement camerasElement;
+    private WebElement camerasElement;
     @FindBy(xpath = "//*[@class='nav-item dropdown']/a[contains(@href,'mp3-player')]")
-    WebElement mp3PlayersElement;
+    private WebElement mp3PlayersElement;
     @FindBy(xpath = "(//*[@class='nav-item dropdown'])[4]//li")
-    List<WebElement> mp3PlayersDropDown;
+    private List<WebElement> mp3PlayersDropDown;
     @FindBy(xpath = "//a[@class='see-all'][contains(@href,'mp3-player')]")
-    WebElement show_all_mp3Players;
+    private WebElement show_all_mp3Players;
+
+    By alertPopUp=By.xpath("//div[@class='alert alert-success alert-dismissible']");
 
     /**
      Actions Methods
@@ -112,6 +119,8 @@ public class HeaderPage extends HomePageEnums{
     public void setMyAccount(MyAccount type){
         wait.until(ExpectedConditions.visibilityOf(myAccountElement));
         wait.until(ExpectedConditions.elementToBeClickable(myAccountElement));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(alertPopUp));
+
         myAccountElement.click();
         wait.until(ExpectedConditions.visibilityOfAllElements(myAccountDropDown));
         for (WebElement option:myAccountDropDown){
@@ -132,7 +141,9 @@ public class HeaderPage extends HomePageEnums{
         checkoutElement.click();
     }
     public void searchProduct(String productName){
+        searchBoxElement.clear();
         searchBoxElement.sendKeys(productName+ Keys.ENTER);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("product-search")));
     }
     public void getParticularDesktop(Components type){
         desktopElement.click();
@@ -261,6 +272,15 @@ public class HeaderPage extends HomePageEnums{
         return addedItemTotalAmount.getText();
     }
     public String getSearchBoxText(){
-        return searchBoxElement.getText();
+        wait.until(ExpectedConditions.visibilityOf(searchBoxElement));
+        return searchBoxElement.getAttribute("value");
+    }
+
+    public boolean searchBoxIsPresents(){
+        return searchBoxElement.isDisplayed();
+    }
+
+    public boolean searchButtonIsPresents(){
+        return searchButtonElement.isDisplayed();
     }
 }
